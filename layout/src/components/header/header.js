@@ -31,11 +31,12 @@ class Header extends React.Component {
     Events.scrollEvent.remove("begin");
     Events.scrollEvent.remove("end");
   }
-  
+
   render() {
+   
     return (
       <>
-        <header>
+        <div className={this.props.styleHeader ?  'fixed':'header'}>
           <div id="logo"  onClick={this.scrollToTop}>
             <span>Just a layout</span>
           </div>
@@ -53,7 +54,7 @@ class Header extends React.Component {
               FAQ
             </a>
           </div>
-        </header>
+        </div>
       </>
     );
   }

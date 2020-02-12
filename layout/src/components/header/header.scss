@@ -1,47 +1,51 @@
-header {
+.header {
+  width: 100%;
+  padding: 10px 0.5% 10px 0.5%;
+  background: transparent;
+  float: left;
+  position: fixed;
+}
+#logo {
+  color: #fff;
+  cursor: pointer;
+  span {
+    font-size: 1.7em;
+    line-height: 45px;
+    margin-left: 40px;
+    font-family: "Suez One", serif;
+  }
+}
+#about {
+  text-align: center;
+  font-size: 1.1em;
+  line-height: 40px;
+  margin-bottom: 10px;
+
+  a {
+    color: #fff;
+    text-decoration: wavy;
+  }
+  a:hover {
+    color: #5574ca;
+    text-decoration: underline;
+  }
+  a:not(:last-child) {
+    margin-right: 7%;
+  }
+}
+.fixed {
   width: 100%;
   padding: 10px 0.5% 10px 0.5%;
   background: transparent;
   float: left;
   position: fixed;
 
-  #logo {
-    color: #fff;
-    cursor: pointer;
-    span {
-      font-size: 1.7em;
-      line-height: 45px;
-      margin-left: 40px;
-      font-family: "Suez One", serif;
-    }
-  }
-  #about {
-    text-align: center;
-    font-size: 1.1em;
-    line-height: 40px;
-    margin-bottom: 10px;
-
-    a {
-      color: #fff;
-      text-decoration: wavy;
-    }
-    a:hover {
-      color: #5574ca;
-      text-decoration: underline;
-    }
-    a:not(:last-child) {
-      margin-right: 7%;
-    }
-  }
-}
-
-.fixed {
   z-index: 5000;
   background-color: #fff;
   border-bottom: 1px solid silver;
 }
 
-header.fixed #logo {
+.fixed #logo {
   color: #343434;
 }
 .fixed #about a {
