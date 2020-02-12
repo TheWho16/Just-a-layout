@@ -1,33 +1,62 @@
 import React from "react";
 
-const Header = () => {
-  let slowScroll = () => {
-    console.log("scroll");
-  };
+import Scroll from "react-scroll";
+var Events = Scroll.Events;
+var scroll = Scroll.animateScroll;
+var scrollSpy = Scroll.scrollSpy;
 
-  return (
-    <>
-      <header>
-        <div id="logo">
-          <span>Just a layout</span>
-        </div>
-        <div id="about">
-          <a href="#" title="Opportunities" onClick={slowScroll}>
-            Opportunities
-          </a>
-          <a href="#" title="Advantages" onClick={slowScroll}>
-            Advantages
-          </a>
-          <a href="#" title="Contacts" onClick={slowScroll}>
-            Contacts
-          </a>
-          <a href="#" title="FAQ" onClick={slowScroll}>
-            FAQ
-          </a>
-        </div>
-      </header>
-    </>
-  );
-};
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.scrollToTop = this.scrollToTop.bind(this);
+  }
+
+  componentDidMount() {
+    Events.scrollEvent.register("begin", function() {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register("end", function() {
+      console.log("end", arguments);
+    });
+
+    scrollSpy.update();
+  }
+
+  scrollToTop() {
+    scroll.scrollToTop();
+  }
+
+  componentWillUnmount() {
+    Events.scrollEvent.remove("begin");
+    Events.scrollEvent.remove("end");
+  }
+  
+  render() {
+    return (
+      <>
+        <header>
+          <div id="logo"  onClick={this.scrollToTop}>
+            <span>Just a layout</span>
+          </div>
+          <div id="about">
+            <a href="#" title="Opportunities" onClick={this.scrollToTop}>
+              Opportunities
+            </a>
+            <a href="#" title="Advantages" onClick={this.scrollToTop}>
+              Advantages
+            </a>
+            <a href="#" title="Contacts" onClick={this.scrollToTop}>
+              Contacts
+            </a>
+            <a href="#" title="FAQ" onClick={this.scrollToTop}>
+              FAQ
+            </a>
+          </div>
+        </header>
+      </>
+    );
+  }
+}
 
 export default Header;
