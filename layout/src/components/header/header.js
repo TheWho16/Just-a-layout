@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollHOC from "../hoc";
 
 import Scroll from "react-scroll";
 var Events = Scroll.Events;
@@ -33,25 +34,62 @@ class Header extends React.Component {
   }
 
   render() {
-   
+    let { Link } = this.props;
     return (
       <>
-        <div className={this.props.styleHeader ?  'fixed':'header'}>
-          <div id="logo"  onClick={this.scrollToTop}>
+        <div className={this.props.styleHeader ? "fixed" : "header"}>
+          <div id="logo" onClick={this.scrollToTop}>
             <span>Just a layout</span>
           </div>
           <div id="about">
             <a href="#" title="Opportunities" onClick={this.scrollToTop}>
-              Opportunities
+              <Link
+                activeClass="active"
+                className="main"
+                to="main"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Opportunities
+              </Link>
             </a>
+
             <a href="#" title="Advantages" onClick={this.scrollToTop}>
-              Advantages
+              <Link
+                activeClass="active"
+                className="overviev"
+                to="overviev"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Advantages
+              </Link>
             </a>
-            <a href="#" title="Contacts" onClick={this.scrollToTop}>
-              Contacts
+            <a href="#" title="contacts" onClick={this.scrollToTop}>
+              <Link
+                activeClass="active"
+                className="contacts"
+                to="contacts"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                Contacts
+              </Link>
             </a>
-            <a href="#" title="FAQ" onClick={this.scrollToTop}>
-              FAQ
+            <a href="#" title="faq" onClick={this.scrollToTop}>
+              <Link
+                activeClass="active"
+                className="faq"
+                to="faq"
+                spy={true}
+                smooth={true}
+                duration={500}
+              >
+                FAQ
+              </Link>
             </a>
           </div>
         </div>
@@ -60,4 +98,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default ScrollHOC(Header);

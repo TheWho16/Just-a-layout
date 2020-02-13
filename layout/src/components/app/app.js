@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Header from "../header";
 import Top from "../top";
+import ScrollHOC from "../hoc";
 
 const App = () => {
   const [styleHeader, setStyle] = useState(false);
@@ -31,6 +32,7 @@ const App = () => {
     <div className="main">
       <Header styleHeader={styleHeader} />
       <Top  />
+     
     </div>
   );
 };
