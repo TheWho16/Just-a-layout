@@ -130,6 +130,7 @@
   }
 
   span {
+    max-width: 500px;
     float: left;
     width: 100%;
     font-size: 2em;
@@ -156,6 +157,8 @@
 //contacts
 
 #contacts {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   float: left;
   padding-bottom: 40px;
@@ -175,6 +178,7 @@
     color: #4f4f4f;
   }
   #form_input {
+    display: grid;
     margin-top: 15px;
     width: 35%;
     margin-left: 38%;
@@ -206,7 +210,9 @@
       border-color: #333;
     }
     .btn {
-      float: left;
+      width: 20%;
+      margin-left: 25%;
+      text-align: center;
       border-radius: 5px;
       padding: 5px 9px;
       font-size: 1.2em;
@@ -224,21 +230,26 @@
 
 
 @media (max-width: 801px){
-#contacts{
-  label{
-    margin-left: 4%;
-  }
-  h5{
-    font-size: 2em;
-  }
-  #form_input {
-    width: 80%;
-    margin-left: 10%;
-    float: left;
+  #contacts{
+    label{
+      margin-left: 4%;
+    }
+    h5{
+      padding-right: 30%;
+      font-size: 2em;
+    }
+    #form_input {
+      width: 80%;
+      margin-left: 10%;
+      float: left;
+    }
   }
 }
-}
-
+@media (max-width: 1024px){
+  #contacts #form_input .btn {
+    width: 40%;
+  }
+}  
 //faq
 #faq {
   background-color: #fff;

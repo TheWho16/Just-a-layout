@@ -74,7 +74,12 @@ const Top = props => {
           <label for="name">
             Имя <span>*</span>
           </label>
-          <input type="text" placeholder="Введите имя" name="name" id="name" />
+          <input type="text"
+           placeholder="Введите имя"
+           name="name"
+           id="name"
+           required
+ />
           <br />
           <label for="email">
             Ваша почта<span>*</span>
@@ -84,6 +89,7 @@ const Top = props => {
             placeholder="Введите email"
             name="email"
             id="email"
+            required
           />
           <br />
           <label for="massage">
@@ -94,6 +100,7 @@ const Top = props => {
             placeholder="Введите ваше сообщение"
             name="massage"
             id="massage"
+            required
           />
           <br />
 
